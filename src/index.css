@@ -271,7 +271,7 @@ button:focus-visible {
 }
 
 .container-image{
-  background: url('images/ima-header.png') center center/cover
+  background: url('/images/ima-header.png') center center/cover
   no-repeat;
   height: 800px;
   width: 100%;
