@@ -19,9 +19,17 @@ function ProjectPage() {
 
     return(
         <div>
-            <h2>{projectData.title}</h2>
-            <h3>Created at: {projectData.date_created}</h3>
-            <h3>{`Status: ${projectData.is_open}`}</h3>
+
+            <div className="div1">
+            <img src={projectData.image} />
+            </div>
+
+            <div className="div2">
+            <h2 style={{color:"#f1356d"}}>{projectData.title}</h2><br></br>
+            <h3>{projectData.description}</h3><br></br>
+            <h3>Goal: $ {projectData.goal}</h3><br></br>
+            <h3>Created at: {projectData.date_created}</h3><br></br>
+            <h3>{`Status: ${projectData.is_open}`}</h3><br></br>
             <h3>Pledges: </h3>
             <ul>
                 {projectData.pledges.map((pledgeData, key) => {
@@ -29,6 +37,14 @@ function ProjectPage() {
                     );
             })}
             </ul>
+
+            <div className='detail-button-submit'>
+                <button>
+                Donate now
+                </button>
+            </div>
+
+            </div>
         </div>
         );
     }

@@ -48,24 +48,32 @@ const postData = async () => {
 
 
     return(
+
+        <div className='loginform'>
+
+            <h1 className='title-login'>Login</h1>
+
         <form>
 
-        <div>
-            <label htmlFor='username'>Username:</label>
+        <div className='username-style'>
+            <label htmlFor='username'>USERNAME</label><br></br>
             <input type='text' id='username' placeholder='Enter username' onChange={handleChange}/>
         </div>
    
 
-        <div>
-            <label htmlFor='password'>Password:</label>
+        <div className='password-login-style'>
+            <label htmlFor='password'>PASSWORD</label><br></br>
             <input type='password' id='password' placeholder='password'onChange={handleChange}/>
         </div>
 
+       <div className='login-button'>
         <button type='submit' onClick={handleSubmit}>
             Login
         </button>
+        </div>
 
         </form>
+    </div>
     );
 }
 

@@ -4,6 +4,9 @@ import Nav from "./components/Nav";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from './pages/LoginPage';
+import ProjectCreateFormPage from "./pages/ProjectCreateFormPage";
+import ProjectList from "./pages/ProjectList";
+
 
 const HeaderLayout = () => (
   <div>
@@ -11,6 +14,7 @@ const HeaderLayout = () => (
     <Outlet />
   </div>
 );
+
 
 const router = createBrowserRouter([
   {
@@ -27,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage /> ,
+      },
+      {
+        path: "/createproject",
+        element: <ProjectCreateFormPage /> ,
+      },
+      {
+        path: "/projectlist",
+        element: <ProjectList /> ,
       },
     ],
   },
