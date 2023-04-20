@@ -374,3 +374,73 @@ button:focus-visible {
   margin-top: 20px;
   margin-bottom: 10px;
  }
+
+ .form-sign-up{
+  border:3px solid;
+  border-color:#f1356d;
+  margin: auto;
+  padding: 20px;
+  max-width: 400px;
+  height: 500px;
+  margin-top: 100px;
+  text-align: left;
+ }
+
+ .title-sign-up{
+  color: #f1356d;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+ }
+
+ .username-sign-up{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.username-sign-up label{
+  font-weight: bold;
+}
+
+.username-sign-up input{
+  margin-top: 20px;
+  height: 30px;
+  width: 250px;
+}
+
+.email-sign-up{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.email-sign-up input{
+  margin-top: 20px;
+  height: 30px;
+  width: 250px;
+}
+
+.email-sign-up label{
+  font-weight: bold;
+}
+
+.password-sign-up{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.password-sign-up input{
+  margin-top: 20px;
+  height: 30px;
+  width: 250px;
+}
+
+.password-sign-up label{
+  font-weight: bold;
+}
+
+.button-sign-up{
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}

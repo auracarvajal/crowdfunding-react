@@ -1,11 +1,13 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { useState } from 'react'
 import Nav from "./components/Nav";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from './pages/LoginPage';
 import ProjectCreateFormPage from "./pages/ProjectCreateFormPage";
 import ProjectList from "./pages/ProjectList";
+import SignUpPage from "./pages/SignUpPage";
 
 
 const HeaderLayout = () => (
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/projectlist",
         element: <ProjectList /> ,
+      },
+      {
+        path: "/signup",
+        element: <SignUpPage /> ,
       },
     ],
   },

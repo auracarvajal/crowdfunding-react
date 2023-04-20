@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function LoginForm(){
 const [credentials, setCredentials ] = useState({
@@ -8,7 +9,7 @@ const [credentials, setCredentials ] = useState({
     password: '',
 
 });
-const navigate = useNavigate();
+
 
 const handleChange = (event) => {
     const { id, value } = event.target;
@@ -18,12 +19,17 @@ const handleChange = (event) => {
     }))
 };
 
+const navigate = useNavigate();
+
+const [formError, setFormError] = useState(false)
+
 const handleSubmit = (e) => {
     e.preventDefault();
     
     if (credentials.username && credentials.password) {
         postData().then((response) => {
             window.localStorage.setItem("token", response.token);
+            window.localStorage.setItem("username", credentials.username);
             navigate("/");
         });
     }
@@ -40,12 +46,16 @@ const postData = async () => {
             "content-type": "application/json",
         },
         body: JSON.stringify(credentials),
+        })
+        if (response.ok) {
+            setFormError(false);
+            return response.json()
+        } else {
+            setFormError(true);
+            return
         }
-        );
-        return response.json();
-    };
-
-
+   
+    }
 
     return(
 
@@ -71,6 +81,14 @@ const postData = async () => {
             Login
         </button>
         </div>
+
+        {
+            formError && 
+            <div>
+                <p>The username and password you entered does not match our records. Please try again.</p>
+                <p>If you don't have an account, please sign up for one <Link to={`/signup`}><b>here</b></Link>.</p>
+            </div>
+        }
 
         </form>
     </div>
